@@ -1,7 +1,7 @@
 @import '../../styles/shared-styles.scss';
 
 .container{
-    color: aliceblue;
+    color: black;
     margin-bottom: 100px;
 }
 table {
@@ -9,7 +9,7 @@ table {
     border-radius: 10px;
     border: none;
     border-collapse: separate;
-    border: 1px solid white;
+    border: 1px solid black;
     border-spacing: 0;
     background-color: $shopapp-background-color;    
     padding: 80px;
