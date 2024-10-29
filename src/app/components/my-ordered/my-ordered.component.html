@@ -1,32 +1,38 @@
 <app-header></app-header>
-<div class="container">
-    <h1 style="margin-top: 20px;">My ordered</h1>
-    <hr  class="line mt-4">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <div class="col-md-12">
-        <table>
-            <thead>
-                <th>Product</th>
-                <th>Phone Number</th>
-                <th>Payment method</th>
-                <th>Status</th>
-                <th>Total money</th>
-            </thead>
-            
-                @for(item of orders; track  item){
-                    <tr >
-                        <td (click)="toOrderDetail(item.id)"><img class="product-images" [src]="item.order_details[0].thumbnail" alt=""><span>{{item.order_details[0].product_name}}</span></td>
-                        <td>{{item.phone_number}} </td>
-                        <td>{{item.payment_method}} </td>
-                        <td>{{item.status}} </td>
-                        <td>{{item.total_money| number:'1.2-2' }} </td>
-                    </tr>
+<div class="container" style="font-family: Arial, Helvetica, sans-serif;">
 
-                }
-        </table>
-        
+  <hr class="line mt-4">
 
-    </div>
+  <div class="col-md-12 luxury-container">
+    <table class="luxury-table">
+      <thead >
+        <tr style="font-family: Arial, Helvetica, sans-serif;">
+          <th>Hình ảnh</th>
+          <th>Sản phẩm</th>
+          <th>Số điện thoại</th>
+          <th>Phương thức thanh toán</th>
+          <th>Trạng thái</th>
+          <th>Tổng tiền</th>
+        </tr>
+      </thead>
+      <tbody style="font-family: Arial, Helvetica, sans-serif;">
+        @for(item of orders; track item){
+          <tr (click)="toOrderDetail(item.id)">
+            <td><img class="product-images" [src]="item.order_details[0].thumbnail" alt="Ảnh sản phẩm"></td>
+            <td>{{ item.order_details[0].product_name }}</td>
+            <td>{{ item.phone_number }}</td>
+            <td>{{ item.payment_method }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.total_money | number:'1.0-0' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+
 </div>
 
 <app-footer></app-footer>

@@ -11,11 +11,11 @@ import { inject } from '@angular/core';
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: [
-    './admin.component.scss',        
-  ],  
+    './admin.component.scss',
+  ],
   standalone: true,
-  imports: [       
-    CommonModule,    
+  imports: [
+    CommonModule,
     RouterModule,
     //FormsModule
   ],
@@ -26,19 +26,19 @@ export class AdminComponent implements OnInit {
   private userService = inject(UserService);
   private tokenService = inject(TokenService);
   private router = inject(Router);
-    
+
   ngOnInit() {
-    this.userResponse = this.userService.getUserResponseFromLocalStorage();    
+    this.userResponse = this.userService.getUserResponseFromLocalStorage();
     // Default router
     debugger
     if (this.router.url === '/admin') {
       this.router.navigate(['/admin/orders']);
     }
-   }  
+   }
   logout() {
     this.userService.removeUserFromLocalStorage();
     this.tokenService.removeToken();
-    this.userResponse = this.userService.getUserResponseFromLocalStorage();    
+    this.userResponse = this.userService.getUserResponseFromLocalStorage();
     this.router.navigate(['/']);
   }
   showAdminComponent(componentName: string): void {
@@ -59,7 +59,7 @@ export class AdminComponent implements OnInit {
 /**
  npm install --save font-awesome
  angular.json:
- "styles": [   
+ "styles": [
     "node_modules/font-awesome/css/font-awesome.min.css"
 ],
  */

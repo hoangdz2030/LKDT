@@ -1,7 +1,7 @@
 @import '../../styles/shared-styles.scss';
 
 .container {
-    color: rgb(199, 194, 194);
+    color: rgb(0, 0, 0);
     margin-bottom: 200px;
 }
 .confirmation-container {
@@ -31,7 +31,7 @@ table {
     width: 100%;
     border-radius: 10px;
     border-collapse: separate;
-    border: 1px solid rgb(150, 150, 150);
+    border: 1px solid rgb(85, 84, 84);
     border-spacing: 0;
     background-color: $shopapp-background-color;
     margin-bottom: 100px;
@@ -53,6 +53,6 @@ td {
 }
 span{
     font-weight: bold;
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     margin-right: 20px;
 }

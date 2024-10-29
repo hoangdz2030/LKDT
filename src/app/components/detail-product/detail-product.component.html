@@ -270,7 +270,6 @@
       <div class="product-details">
         <h2 class="text-4xl mb-4 font-bold">{{ product?.name }}</h2>
         <!-- <p>{{ product?.description }}</p> -->
-        <p><span class="font-bold text-xl">Giá gốc: </span><del> {{ product?.price1 | number:'1.0-2' }} VND</del></p>
         <p><span class="font-bold text-xl">Giá: </span> <span style="color: #BE1529; font-weight: bolder;">{{ getTotalPrice() | number:'1.0-2' }} VND</span></p>
         <h2 class="font-bold text-xl">Mô tả</h2>
         <p> {{product?.description}} </p>

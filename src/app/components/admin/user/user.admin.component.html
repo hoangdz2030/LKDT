@@ -1,19 +1,22 @@
-<h1 class="text-3xl font-bold">User</h1>
-<table class="table-auto w-full">
-    <thead>
-      <tr>
-        <th class="px-4 py-2">ID</th>
-        <th class="px-4 py-2">Full Name</th>
-        <th class="px-4 py-2">Phone</th>
-        <th class="px-4 py-2">Address</th>
-        <th class="px-4 py-2">State</th>
-        <th class="px-4 py-2">Role</th>
-        <th class="px-4 py-2">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-        @for(user of users; track user.id) {
+<div class="container mx-auto px-4 py-6">
+  <div class="user-management bg-dark-purple p-6 rounded-xl text-white">
+    <h1 class="text-3xl font-bold text-center mb-6">Quản lý người dùng</h1>
+
+    <table class="user-table min-w-full text-center rounded-lg overflow-hidden bg-gray-800">
+      <thead class="table-header bg-gray-700">
         <tr>
+          <th class="px-4 py-2 text-gray-300">Mã người dùng</th>
+          <th class="px-4 py-2 text-gray-300">Tên người dùng</th>
+          <th class="px-4 py-2 text-gray-300">Số điện thoại</th>
+          <th class="px-4 py-2 text-gray-300">Địa chỉ</th>
+          <th class="px-4 py-2 text-gray-300">Trạng thái</th>
+          <th class="px-4 py-2 text-gray-300">Quyền</th>
+          <th class="px-4 py-2 text-gray-300">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(user of users; track user.id) {
+          <tr class="cursor-pointer transition ease-in-out">
             <td class="border px-4 py-2">{{ user.id }}</td>
             <td class="border px-4 py-2">{{ user.fullname }}</td>
             <td class="border px-4 py-2">{{ user.phone_number }}</td>
@@ -21,23 +24,19 @@
             <td class="border px-4 py-2">{{ user.is_active ? 'Active' : 'Inactive' }}</td>
             <td class="border px-4 py-2">{{ user.role.name }}</td>
             <td class="border px-4 py-2">
-                <!-- <button class="py-2 px-4 rounded" :class="{
-                        'bg-red-500 hover:bg-red-700 text-white': user.is_active,
-                        'bg-green-500 hover:bg-green-700 text-white': !user.is_active
-                      }" (click)="toggleUserStatus(user)">
-                    {{ user.is_active ? 'Block User' : 'Unblock User' }}
-                </button> -->
-                <button class="btn btn-danger transition ease-in-out delay-150"  (click)="toggleUserStatus(user)">
-              <i class="fas fa-ban"></i>
-          </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2" (click)="resetPassword(user.id)">
-                    Reset Password
-                </button>
+              <button class="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700 transition ease-in-out" (click)="toggleUserStatus(user)">
+                <i class="fas fa-ban"></i>
+              </button>
+              <button class="bg-blue-500 text-white font-bold py-1 px-2 rounded ml-2 hover:bg-blue-700 transition ease-in-out" (click)="resetPassword(user.id)">
+                Reset Password
+              </button>
             </td>
-        </tr>
+          </tr>
         }
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- <h1>User</h1>
 <table class="table table-striped">
