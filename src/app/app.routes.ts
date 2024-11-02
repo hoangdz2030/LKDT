@@ -17,6 +17,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { MyOrderedComponent } from './components/my-ordered/my-ordered.component';
 //import { OrderAdminComponent } from './components/admin/order/order.admin.component';
 import { UpdateUserComponent } from './components/user-profile/update-user/update.profile.component';
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },  

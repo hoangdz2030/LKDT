@@ -22,7 +22,7 @@ export const filterBrand = [
             { value: "1", label: "PC Bán Chạy" },
             { value: "2", label: "Bàn Phím" },
             { value: "3", label: "Tai nghe" },
-            { value: "4", label: "Mirco" },
+            { value: "4", label: "Chuột" },
             { value: "5", label: "Laptop" },
             { value: "6", label: "CPU" },
             { value: "7", label: "Màn Hình" },
@@ -36,10 +36,10 @@ export const filterPrice = [
         id: "price",
         name: "Price Range",
         option: [
-            { value: "4000000", label: "From 2 - 4 Million" },
-            { value: "7000000", label: "From 4 - 7 Million" },
-            { value: "12900000", label: "From 7 - 13 Million" },
-            { value: "130000000", label: "Above 13 Million" },
+            { value: "4000000", label: "Từ 2 - 4 Triệu" },
+            { value: "7000000", label: "Từ 4 - 7 Triệu" },
+            { value: "12900000", label: "Từ 7 - 13 Triệu" },
+            { value: "130000000", label: "Từ 13 Triệu Trở Lên" },
         ]
     }
 ]

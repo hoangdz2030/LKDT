@@ -21,6 +21,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { RegisterDTO } from '../../dtos/user/register.dto';
 import { Route, ActivatedRoute } from '@angular/router';
 import { LoginResponse } from '../../responses/user/login.response';
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,8 @@ import { LoginResponse } from '../../responses/user/login.response';
     HeaderComponent,
     NgbModule,
     ListProductComponent,
-    HomePartnerComponent
+    HomePartnerComponent,
+    RouterModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

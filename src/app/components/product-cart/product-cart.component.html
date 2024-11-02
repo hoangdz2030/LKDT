@@ -1,13 +1,12 @@
 
-                       
-
+        
                             <div 
 
                             class=" box relative duration-500 cursor-pointer flex flex-col items-center justify-center  rounded-lg  product 2xl:w-68    xl:w-60  lg:w-52 lg:h-80">
-                               <div  class="   lg:w-50 w-32 py-2" (click)="navigateTo('/product-details/' + product.id)">
+                               <div  class="   lg:w-50 w-32 py-2" (click)="navigateTo('/products/' + product.id)">
                                    <img [src]="product.url" alt="">   
                                </div>
-                               <div  (click)="navigateTo('/product-details/' + product.id)">
+                               <div  (click)="navigateTo('/products/' + product.id)">
                                    <p class="mt-2 text-xs font-bold text-black text-center ">{{ product.name }}</p>
                                    <div class="flex  justify-center gap-5 ">
                                        <p class="text-center text-red-600 font-bold">{{product.price}}</p>

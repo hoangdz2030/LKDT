@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-
+import { RouterModule} from '@angular/router';
 @Component({
   selector: 'app-list-product',
   standalone: true,
@@ -19,7 +19,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   styleUrl: './list-product.component.scss',
   imports :[
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

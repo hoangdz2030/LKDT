@@ -117,7 +117,7 @@
             <h4 class="product-header" style="text-align: center; margin-left: 20px; font-weight: bolder; font-size: larger; color: black; margin-bottom: 10px;">Nhập mã khuyến mãi</h4>
             <div class="input-group">
               <input type="text" style="margin-left: 20px;" class="form-control" formControlName="couponCode" placeholder="Nhập coupon">
-              <button (click)="applyCoupon()" class="" type="button" style="background-color: #dc3545; margin-left: 5px; border: 1px solid #dc3545; border-radius: 5px; color: white; padding: 5px;">Áp dụng</button>
+              <button (click)="applyCoupon()" class="btn btn-gradient" type="button" style="background-color: #dc3545; margin-left: 5px; border: 1px solid #dc3545; border-radius: 5px; color: white; padding: 5px; width: 100px;">Áp dụng</button>
             </div>
           </div>
           @if(couponDiscount > 0) {
@@ -127,9 +127,14 @@
           }
 
           <h4 style=" margin-left: 20px; margin-top: 10px; margin-bottom: 30px; font-weight: bolder; font-size: larger;">Tổng tiền: <span style="color: #e30019;">{{ totalAmount | number:'1.0-0'}} đ</span></h4>
-          <div class="text-start mt-3">
+          <!-- <div class="text-start mt-3">
             <button (click)="placeOrder()" class="" style=" background-color: #dc3545; margin-left: 20px; border: 1px solid #dc3545; border-radius: 5px; color: white; padding: 5px; margin-bottom: 20px;" type="button">THANH TOÁN</button>
-          </div>
+          </div> -->
+          <div class="text-start mt-3">
+            <button 
+                (click)="placeOrder()"
+                class="btn btn-gradient" style=" background-color: #dc3545; margin-left: 20px; border: 1px solid #dc3545; border-radius: 5px; color: white; padding: 5px; margin-bottom: 20px; width: 130px" type="button">Thanh Toán</button>
+        </div>
         </table>
 
         <!-- <div class="text-start mt-3">

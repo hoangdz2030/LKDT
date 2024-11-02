@@ -23,6 +23,7 @@ import { InsertCommentDTO } from './../../dtos/comment/insert.comment.dto';
 import { ApiResponse } from './../../responses/api.response';
 import { environment } from '../../../environments/environment.development';
 import { FormsModule } from '@angular/forms';
+import { RouterModule} from '@angular/router';
 @Component({
   selector: 'app-detail-product',
   templateUrl: './detail-product.component.html',
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     ListProductComponent,
     MatProgressBarModule,
     FooterComponent,
-    FormsModule
+    FormsModule,
+    RouterModule
   ]
 })
 export class DetailProductComponent implements OnInit {
