@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { 
-  DetailProductComponent 
+import {
+  DetailProductComponent
 } from './components/detail-product/detail-product.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderDetailComponent } from './components/detail-order/order.detail.component';
@@ -17,12 +17,14 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { MyOrderedComponent } from './components/my-ordered/my-ordered.component';
 //import { OrderAdminComponent } from './components/admin/order/order.admin.component';
 import { UpdateUserComponent } from './components/user-profile/update-user/update.profile.component';
+import { AuthCallbackComponent } from './components/auth-callback/auth-callback/auth-callback.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },  
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'products/:id', component: DetailProductComponent },  
+  { path: 'auth/google/callback', component: AuthCallbackComponent },
+  { path: 'products/:id', component: DetailProductComponent },
   { path: 'orders', component: OrderComponent,canActivate:[AuthGuardFn] },
   { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuardFn] },
   // { path: 'orders/:id', component: OrderDetailComponent },
@@ -33,10 +35,10 @@ export const routes: Routes = [
 
 
 
-  //Admin   
-  { 
-    path: 'admin', 
-    component: AdminComponent, 
-    canActivate:[AdminGuardFn] 
-  },      
+  //Admin
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate:[AdminGuardFn]
+  },
 ];

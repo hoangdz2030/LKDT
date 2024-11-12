@@ -11,16 +11,28 @@ import { InsertProductAdminComponent } from "./product/insert/insert.product.adm
 import { InsertCategoryAdminComponent } from "./category/insert/insert.category.admin.component";
 import { UpdateCategoryAdminComponent } from "./category/update/update.category.admin.component";
 import { UserAdminComponent } from "./user/user.admin.component";
+import { UserCommentComponent } from "./user-comment/user-comment.component";
+import { PostComponent } from "./post/post.component";
+import { InventoryComponent } from "./inventory/inventory.component";
+import { PromotionComponent } from "./promotion/promotion.component";
+import { PromotionConditionsComponent } from "./promotion-conditions/promotion-conditions.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { SupplierComponent } from "./supplier/supplier.component";
+import { ReportFromCustomerComponent } from "./report-from-customer/report-from-customer.component";
 
 export const adminRoutes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
         children: [
+          {
+            path: 'home',
+            component: DashboardComponent
+          },
             {
                 path: 'orders',
                 component: OrderAdminComponent
-            },            
+            },
             {
                 path: 'products',
                 component: ProductAdminComponent
@@ -42,7 +54,42 @@ export const adminRoutes: Routes = [
                 path: 'products/insert',
                 component: InsertProductAdminComponent
             },
-            //categories            
+            //comment
+            {
+              path: 'comment',
+              component: UserCommentComponent
+            },
+            //post bài viết
+            {
+              path: 'baiviet',
+              component: PostComponent
+            },
+            //inventory
+            {
+              path: 'tonkho',
+              component: InventoryComponent
+            },
+             //supplier
+             {
+              path: 'supplier',
+              component: SupplierComponent
+            },
+            //report
+            {
+              path: 'report',
+              component: ReportFromCustomerComponent
+            },
+            //promotions
+            {
+              path: 'discount',
+              component: PromotionComponent
+            },
+            //promotions condition
+            {
+              path: 'dieukienkhuyenmai',
+              component: PromotionConditionsComponent
+            },
+            //categories
             {
                 path: 'categories/update/:id',
                 component: UpdateCategoryAdminComponent
@@ -54,7 +101,7 @@ export const adminRoutes: Routes = [
             {
                 path: 'users',
                 component: UserAdminComponent
-            },  
+            },
         ]
     }
 ];

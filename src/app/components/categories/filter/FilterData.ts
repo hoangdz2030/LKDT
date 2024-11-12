@@ -24,7 +24,7 @@ export const filterBrand = [
             { value: "3", label: "Tai nghe" },
             { value: "4", label: "Chuột" },
             { value: "5", label: "Laptop" },
-            { value: "6", label: "CPU" },
+            // { value: "6", label: "CPU" },
             { value: "7", label: "Màn Hình" },
             { value: "8", label: "Ram" },
         ]
@@ -36,6 +36,7 @@ export const filterPrice = [
         id: "price",
         name: "Price Range",
         option: [
+            { value: "1000000", label: "Từ 100 - 1 Triệu" },
             { value: "4000000", label: "Từ 2 - 4 Triệu" },
             { value: "7000000", label: "Từ 4 - 7 Triệu" },
             { value: "12900000", label: "Từ 7 - 13 Triệu" },

@@ -9,7 +9,7 @@ import { OrderDTO } from '../../dtos/order/order.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Order } from '../../models/order';
-
+import { ChangeDetectorRef } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -212,21 +212,41 @@ export class OrderComponent implements OnInit{
       this.calculateTotal();
     }
   }
+
+  
   // Hàm xử lý việc áp dụng mã giảm giá
   applyCoupon(): void {
-    debugger
     const couponCode = this.orderForm.get('couponCode')!.value;
-    if (!this.couponApplied && couponCode) {
-      this.calculateTotal();
-      this.couponService.calculateCouponValue(couponCode, this.totalAmount)
-        .subscribe({
-          next: (apiResponse: ApiResponse) => {
-            this.totalAmount = apiResponse.data;
-            this.couponApplied = true;
+    if (couponCode) {
+      if (couponCode.toUpperCase() === 'NONEL' || couponCode.toUpperCase() === 'SUMMER2024' || couponCode.toUpperCase() === 'WINTER2024' || couponCode.toUpperCase() === 'NEWYEAR2025' || couponCode.toUpperCase() === 'FALL2024' || couponCode.toUpperCase() === 'SPRING2024') {
+        this.couponDiscount = this.totalAmount * 0.2;
+        this.totalAmount -= this.couponDiscount;
+        console.log('Coupon NONEL applied successfully! Discount:', this.couponDiscount);
+      } else {
+        // Gọi API để kiểm tra các mã khác
+        this.couponService.calculateCouponValue(couponCode, this.totalAmount).subscribe({
+          next: (response: any) => {
+            console.log('API response:', response);
+            if (response.status === 'Calculate coupon successfully') {
+              this.couponDiscount = this.totalAmount - response.data.result;
+              this.totalAmount = response.data.result;
+              console.log('Updated total amount:', this.totalAmount);
+            } else {
+              console.warn('Invalid coupon code or no discount applied');
+            }
+          },
+          error: (error) => {
+            console.error('Error applying coupon:', error);
           }
         });
+      }
+    } else {
+      console.warn('Please enter a coupon code');
     }
   }
+  
+  
+  
   private updateCartFromCartItems(): void {
     this.cart.clear();
     this.cartItems.forEach((item) => {
@@ -234,4 +254,5 @@ export class OrderComponent implements OnInit{
     });
     this.cartService.setCart(this.cart);
   }
+
 }

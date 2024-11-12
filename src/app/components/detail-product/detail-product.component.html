@@ -221,6 +221,7 @@
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <div class="container">
   <div class="intro-section">
@@ -242,8 +243,8 @@
           </div>
           }
         </div>
-        <button style="color: #000;" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
-          (click)="previousImage()">
+        <button style="color: #000;" class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+          data-bs-slide="prev" (click)="previousImage()">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span style="color: #000;" class="visually-hidden">Previous</span>
         </button>
@@ -270,13 +271,52 @@
       <div class="product-details">
         <h2 class="text-4xl mb-4 font-bold">{{ product?.name }}</h2>
         <!-- <p>{{ product?.description }}</p> -->
-        <p><span class="font-bold text-xl">Giá: </span> <span style="color: #BE1529; font-weight: bolder;">{{ getTotalPrice() | number:'1.0-2' }} VND</span></p>
+        <p style="font-weight: 700;
+    color: #FF8A00;">4.0<i style="margin-left: 10px;" class="fas  fa-star color_star"></i></p>
+        <p><span class="font-bold text-xl"></span> <span
+            style="font-size: 32px;line-height: 40px;font-weight: bold;color: #E30019; margin-bottom: 10px;">{{
+            getTotalPrice() | number:'1.0-2' }} VND</span></p>
+        <div class="product-gift-promo-box gift-promo--app" id="gift-promo--app" style="border: 1px solid #FFD9D9;
+            border-radius: 4px;
+            overflow: hidden;">
+          <div class="box-header"
+            style="height: 42px;background: #FFD9D9;display: flex;align-items: center;padding: 12px 20px;font-weight: 600; font-size: 18px;line-height: 22px;color: #E30019; margin-bottom: 0;">
+            <div class="icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.08 21.2271C4.08 21.6546 4.40175 22 4.8 22H11.235V12.9179H4.08V21.2271ZM12.765 22H19.2C19.5982 22 19.92 21.6546 19.92 21.2271V12.9179H12.765V22ZM20.28 7.12077H16.959C17.265 6.60386 17.445 5.99034 17.445 5.33333C17.445 3.49517 16.0522 2 14.34 2C13.4085 2 12.5693 2.44444 12 3.14493C11.4307 2.44444 10.5915 2 9.66 2C7.94775 2 6.555 3.49517 6.555 5.33333C6.555 5.99034 6.73275 6.60386 7.041 7.12077H3.72C3.32175 7.12077 3 7.46618 3 7.89372V11.2754H11.235V7.12077H12.765V11.2754H21V7.89372C21 7.46618 20.6782 7.12077 20.28 7.12077ZM11.235 7.02415H9.66C8.7915 7.02415 8.085 6.2657 8.085 5.33333C8.085 4.40097 8.7915 3.64251 9.66 3.64251C10.5285 3.64251 11.235 4.40097 11.235 5.33333V7.02415ZM14.34 7.02415H12.765V5.33333C12.765 4.40097 13.4715 3.64251 14.34 3.64251C15.2085 3.64251 15.915 4.40097 15.915 5.33333C15.915 6.2657 15.2085 7.02415 14.34 7.02415Z"
+                  fill="#E30019"></path>
+              </svg>
+            </div>
+            <h2>
+              Quà tặng khuyến mãi</h2>
+          </div>
+          <div class="box-content product-appgift" id="gift-promo--product" data-id="1056829027" data-vid=""
+            data-title="PC GVN AMD R5-8400F/ VGA RX 7600" style="min-height: 0;
+              transition: height 1s ease;
+              padding: 6px 0;">
+            <div class="gift-promo--content" style="font-size: 15px;
+    margin-left: 10px;">
+              <div class="gift-promo--lists">
+                <ul>
+                  <li class="higtlight"><a href="" class="line-gift">Tặng ngay <strong>1</strong> x <strong>Màn hình
+                        ViewSonic VX2479-HD-PRO 24" IPS 180Hz chuyên game</strong> trị giá
+                      <strong>2.890.000₫</strong></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <h2 class="font-bold text-xl">Mô tả</h2>
-        <p> {{product?.description}} </p>
+        <p style="text-align: justify;"> {{product?.description}} </p>
 
         <div class="product-actions">
-          <button class="btn btn-primary" (click)="addToCart()">Thêm vào giỏ hàng</button>
-          <button class="btn btn-success" (click)="buyNow()">Mua ngay</button>
+          <button class="btn btn-primary"
+            style="font-weight: 600;font-size: 18px; background-color: #BE1529; border-color: #BE1529; width: 50%;"
+            (click)="addToCart()">Thêm vào giỏ hàng</button>
+          <button class="btn btn-success"
+            style="font-weight: 600;font-size: 18px; background-color: #428bca; border-color: #428bca; width: 50%;"
+            (click)="buyNow()">Mua ngay</button>
         </div>
         <div class="product-quantity">
           <div class="border-wrapper" style="border: 1px solid; padding: 3px;">
@@ -285,124 +325,198 @@
             <button (click)="increaseQuantity()">+</button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="product-review">
-    <section>
-      <h1 class="font-weight-bold">Review</h1>
-      <div class="row gx-5">
-        <div class="content">
-          <div class="col-md-7">
-            <div>
-              <div class="box-comment">
-                <div *ngIf="comments" class="comment-container">
-                  <div *ngFor="let cmt of comments; trackBy: trackByCommentId; let i = index;">
-                    <p style="font-weight: bold;">{{cmt.user.fullname}}</p>
-                    <p>{{cmt.content}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- phần thêm comment -->
-            <div #Comment></div>
-            <div class="form-group mt-5">
-              <label for="comment" class="font-weight-bold">Comment</label>
-              <input type="text" class="form-control" [(ngModel)]="insertCommentDTO.content">
-            </div>
-            <button (click)="insertComment()" class="btn btn-primary mt-3">Comment</button>
-          </div>
-          <div class="col-md-5">
-            <div class="d-flex align-items-center">
-              <p class="font-weight-bold" style="color: #ff9f00;">4.2</p>
-              <div class="star-rating">
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star text-warning"></i>
-                <i class="fas fa-star-half-alt text-warning"></i>
-              </div>
-              <p class="ms-3" style="color:#0071e3;">1001 reviews</p>
-            </div>
-            <div>
-              <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <p class="m-0 me-2">5</p>
-                  <i class="fas fa-star text-warning"></i>
-                </div>
-                <div class="progress flex-grow-1">
-                  <div class="progress-bar" role="progressbar" style="width: 53%;" aria-valuenow="53" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <p class="ms-3">53%</p>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <p class="m-0 me-2">4</p>
-                  <i class="fas fa-star text-warning"></i>
-
-                </div>
-                <div class="progress flex-grow-1">
-                  <div class="progress-bar" role="progressbar" style="width: 29%;" aria-valuenow="29" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <p class="ms-3">29%</p>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <p class="m-0 me-2">3</p>
-                  <i class="fas fa-star text-warning"></i>
-
-                </div>
-                <div class="progress flex-grow-1">
-                  <div class="progress-bar" role="progressbar" style="width: 9%;" aria-valuenow="9" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <p class="ms-3">9%</p>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <p class="m-0 me-2">2</p>
-                  <i class="fas fa-star text-warning"></i>
-
-                </div>
-                <div class="progress flex-grow-1">
-                  <div class="progress-bar" role="progressbar" style="width: 4%;" aria-valuenow="4" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                </div>
-                <p class="ms-3">4%</p>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                  <p class="m-0 me-2">1</p>
-                  <i class="fas fa-star text-warning"></i>
-
-                </div>
-                <div class="progress flex-grow-1">
-                  <div class="progress-bar bg-danger" role="progressbar" style="width: 6%;" aria-valuenow="6"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="ms-3">6%</p>
-              </div>
-            </div>
-          </div>
-
+        <div class="product-desc-short prtab2">
+          <p style="margin-top: 0;
+    margin-bottom: 1rem">
+            <span style="font-size:18px"><em>⭐<strong>&nbsp;</strong>Giảm ngay<strong>&nbsp;<span
+                    style="color:#ff0000">1.500.000đ</span></strong><span style="color:#ff0000"> </span>vào giá của sản
+                phẩm
+                {{ product?.name }} nếu khách&nbsp;không lấy quà tặng<strong>.</strong></em></span>
+          </p>
+          <hr
+            style="margin-top: 1rem;margin-bottom: 1rem;border: 0;border-top: 1px solid rgba(0, 0, 0, .1);box-sizing: content-box; height: 0;overflow: visible;width: 100%">
+          <p><span style="color:#ff0000"><span style="font-size:18px"><strong>ƯU ĐÃI KHI MUA KÈM
+                  {{ product?.name }}</strong></span></span></p>
+          <p><span style="font-size:18px">⭐ <a target="_blank"
+                href="https://gearvn.com/pages/chuong-trinh-mua-kem-pc-gearvn"><strong>Ưu đãi lên đến 54% khi mua kèm
+                  {{ product?.name }}</strong> xem ngay tại đây</a></span></p>
+          <hr
+            style="margin-top: 1rem;margin-bottom: 1rem;border: 0;border-top: 1px solid rgba(0, 0, 0, .1);box-sizing: content-box; height: 0;overflow: visible;width: 100%">
+          <p><span style="font-size:18px"><span style="color:#ff0000"><strong>Hỗ&nbsp;trợ trả góp MPOS (Thẻ tín dụng),
+                  HDSAISON.</strong></span></span></p>
+          <p><span style="font-size:15px"><em>(Hình ảnh PC chỉ mang tính chất minh họa).</em></span></p>
+          <p><span style="font-size:20px">
+            </span></p>
         </div>
-
-
-
+        <div class="product-discount-promo-box discount-promo--app" id="discount-promo--app" style="border: 1px solid #CFCFCF;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 16px 0 0 0">
+          <div class="box-header" style="background: #CFCFCF;
+          display: flex;
+          align-items: center;
+          padding: 12px 20px;">
+            <h2>Khuyến mãi</h2>
+          </div>
+          <div class="box-content product-appdiscount" id="discount-promo--product" data-id="1056829027" data-vid=""
+            data-title="PC GVN AMD R5-8400F/ VGA RX 7600" style="min-height: 0;
+          transition: height 1s ease;
+          padding: 6px 0;">
+            <div class="discount-promo--content" style="margin-right: 10px;">
+              <div class="discount-promo--lists">
+                <ul>
+                  <li>
+                    <div class="line-discount">
+                      <span style="
+                      margin-left: 20px;
+                  "> Giảm ngay 300,000đ khi mua thêm RAM</span> <a data-items-id="66fb5e8bc1f9470012f5ac1a"
+                        data-itemgroup-id="IG2"
+                        href="/collections/chuong-trinh-khuyen-mai/?id=66fb5e8bc1f9470012f5ac1a&amp;item_group_id=IG2"> (Xem
+                        thêm)</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="line-discount"><span style="
+                      margin-left: 20px;
+                  ">Giảm ngay 200,000đ khi nâng cấp SSD</span> <a
+                        data-items-id="66fb5f3c64a8b80012e16540" data-itemgroup-id="IG2"
+                        href="/collections/chuong-trinh-khuyen-mai/?id=66fb5f3c64a8b80012e16540&amp;item_group_id=IG2"> (Xem
+                        thêm)</a> </div>
+                  </li>
+                  <li>
+                    <div class="line-discount">
+                      <span style="
+                      margin-left: 20px;
+                  ">Giảm ngay 300.000đ khi mua Microsoft Office kèm PC tại GEARVN.</span>
+                      <a data-items-id="67064ff7f1714e00128c94e5" data-itemgroup-id="IG2"
+                        href="/collections/chuong-trinh-khuyen-mai/?id=67064ff7f1714e00128c94e5&amp;item_group_id=IG2"> (Xem
+                        thêm)</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-
-
-
-    <h2 style="color:aliceblue;">Related</h2>
-    <div>
-
-      <app-list-product [categoryId]="product?.category_id"></app-list-product>
     </div>
   </div>
+
+
+
+
+  <div class="product-review" style="background-color: #fff;border-radius: 10px;">
+    <section style="border: 1px solid; border-color: rgb(207, 207, 207); border-radius: 10px;">
+      <div style="padding: 20px;">
+        <h1 class="font-weight-bold" style="text-align: center; font-size: 30px;margin-bottom: 10px;">Đánh giá sản phẩm
+          {{product?.name}}</h1>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <span style="color: #E30019;font-size: 40px;margin-left: 65%;font-weight: 700;">4.2/5</span>
+
+          <div class="star-rating" style="margin-left: 65%;">
+            <!-- <div class="star-rating"style="margin-left: 100%;"> -->
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star text-warning"></i>
+            <i class="fas fa-star-half-alt text-warning"></i>
+          </div>
+          <p class="ms-3" style="margin-left: 60%;"><b>(1001)</b> Đánh giá & nhận xét</p>
+        </div>
+        <div class="col-6">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="m-0 me-2" style="margin-left: 30px;">5</p>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar" role="progressbar" style="width: 53%; background-color: #24B400;"
+                aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="ms-3" style="margin-right: 40%;">53%</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="m-0 me-2">4</p>
+              <i class="fas fa-star text-warning"></i>
+
+            </div>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar" role="progressbar" style="width: 29%;background-color: #24B400;"
+                aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="ms-3" style="margin-right: 40%;">29%</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="m-0 me-2">3</p>
+              <i class="fas fa-star text-warning"></i>
+
+            </div>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar" role="progressbar" style="width: 9%;background-color: #24B400;"
+                aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="ms-3" style="margin-right: 40%;">9%</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="m-0 me-2">2</p>
+              <i class="fas fa-star text-warning"></i>
+
+            </div>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar" role="progressbar" style="width: 4%;background-color: #24B400;"
+                aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="ms-3" style="margin-right: 40%;">4%</p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="m-0 me-2">1</p>
+              <i class="fas fa-star text-warning"></i>
+
+            </div>
+            <div class="progress flex-grow-1">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 6%;" aria-valuenow="6"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="ms-3" style="margin-right: 40%;">6%</p>
+          </div>
+        </div>
+      </div>
+      <div #Comment></div>
+      <label for="comment" class="font-weight-bold" style="text-align: center; font-size: 30px;margin-left: 40%;">Gửi
+        nhận xét và đánh giá</label>
+      <input type="text" style="width: 50%; margin-left: 25%; background-color: rgb(214, 214, 214);color: #000;"
+        class="form-control" [(ngModel)]="insertCommentDTO.content">
+      <button (click)="insertComment()" class="btn  mt-3"
+        style="background-color: #BE1529; color: #fff; font-weight: 700; margin-left: 45%;">Gửi đánh giá</button>
+      <div class="chat">
+        <div *ngIf="comments" class="comment-container">
+          <div *ngFor="let cmt of comments; trackBy: trackByCommentId; let i = index;"
+            style="border: px solid #9b9b9b; background-color: #f1f1f1; margin: 10px 30%; border-radius: 10px; padding: 10px; display: flex; align-items: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+
+            <img
+              src="https://png.pngtree.com/png-vector/20190805/ourlarge/pngtree-account-avatar-user-abstract-circle-background-flat-color-icon-png-image_1650938.jpg"
+              style="width: 64px; height: 64px; border-radius: 50%; margin-right: 10px;" alt="User avatar">
+
+            <div>
+              <span style="font-weight: bold; display: block;">{{ cmt.user.fullname }}</span>
+              <p style="margin: 5px 0 0;">{{ cmt.content }}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+
+
+  <app-list-product [categoryId]="product?.category_id"></app-list-product>
 </div>
 <!-- <app-footer></app-footer> -->

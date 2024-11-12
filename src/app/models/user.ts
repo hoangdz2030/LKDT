@@ -9,6 +9,5 @@ export interface User {
     date_of_birth: Date;
     facebook_account_id: number;
     google_account_id: number;
-    role: Role;
+    role: number;
 }
-  

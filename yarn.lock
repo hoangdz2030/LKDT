@@ -160,7 +160,7 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^16.0.0 || ^17.0.0", "@angular/common@^17.0.0", "@angular/common@^18.0.0", "@angular/common@>=13.0.0", "@angular/common@>=14.0.0", "@angular/common@>=16.0.0", "@angular/common@17.3.5":
+"@angular/common@^16.0.0 || ^17.0.0", "@angular/common@^17.0.0", "@angular/common@>=13.0.0", "@angular/common@>=14.0.0", "@angular/common@>=16.0.0", "@angular/common@17.3.5":
   version "17.3.5"
   resolved "https://registry.npmjs.org/@angular/common/-/common-17.3.5.tgz"
   integrity sha512-Ox91WxSnOSrQ6I21cHi69EfT2Pxtd5Knb5AsdwpxqE57V2E7EnWMhb+LP+holCtFUhK529EGXCk788M+Elyw6g==
@@ -188,7 +188,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^16.0.0 || ^17.0.0", "@angular/core@^17.0.0", "@angular/core@^18.0.0", "@angular/core@>=13.0.0", "@angular/core@>=16.0.0", "@angular/core@17.3.5":
+"@angular/core@^16.0.0 || ^17.0.0", "@angular/core@^17.0.0", "@angular/core@>=13.0.0", "@angular/core@>=16.0.0", "@angular/core@17.3.5":
   version "17.3.5"
   resolved "https://registry.npmjs.org/@angular/core/-/core-17.3.5.tgz"
   integrity sha512-y6P27lcrKy3yMx/rtMuGsAnDyVEsS3BdyArTXcD0TOImVGHhVIaB0L95DUCam3ajTe2f2x39eozJZDh7QSpJaw==
@@ -1389,6 +1389,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@kurkle/color@^0.3.0":
+  version "0.3.2"
+  resolved "https://registry.npmjs.org/@kurkle/color/-/color-0.3.2.tgz"
+  integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.5"
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.5.tgz"
@@ -2115,10 +2120,10 @@
   resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-17.3.5.tgz"
   integrity sha512-0heI0yHUckdGI8uywu/wkp24KR/tdYMKYJOaYIU+9JydyN1zJRpbR7x0thddl7+k/zu2ZGbfFdv1779Ecw/xdA==
 
-"@ngx-pwa/local-storage@^18.0.0":
-  version "18.0.0"
-  resolved "https://registry.npmjs.org/@ngx-pwa/local-storage/-/local-storage-18.0.0.tgz"
-  integrity sha512-Lmcd0uHayDoO1I5UbwsoVKSlx7aEF86k2amb8dbdF5z0SRKhRN5p7sIXQy6DjC0mkLFBpjYOOzq6kQrqX1kW7Q==
+"@ngx-pwa/local-storage@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.npmjs.org/@ngx-pwa/local-storage/-/local-storage-17.0.0.tgz"
+  integrity sha512-1xnFU56PX5aeOinQHjSlEeZCGUC7wt19LmLIHn3LBEaocKsLLAqXS7Uzt3pqH1vHPhdlpvtt5hh8A5vWAap+7Q==
   dependencies:
     tslib "^2.5.0"
 
@@ -2367,6 +2372,13 @@
   integrity sha512-z9fJ5Im06zvUL548KvYNecEVlA7cVDkGUi6kZusb04mpyEFKCIZJvloCcmpmLaIahDpOQGHaHmG6imtPMmPXGQ==
   dependencies:
     "@types/node" "*"
+
+"@types/chart.js@^2.9.41":
+  version "2.9.41"
+  resolved "https://registry.npmjs.org/@types/chart.js/-/chart.js-2.9.41.tgz"
+  integrity sha512-3dvkDvueckY83UyUXtJMalYoH6faOLkWQoaTlJgB4Djde3oORmNP0Jw85HtzTuXyliUHcdp704s0mZFQKio/KQ==
+  dependencies:
+    moment "^2.10.2"
 
 "@types/connect-history-api-fallback@^1.3.5":
   version "1.5.4"
@@ -3156,6 +3168,13 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chart.js@^4.4.6:
+  version "4.4.6"
+  resolved "https://registry.npmjs.org/chart.js/-/chart.js-4.4.6.tgz"
+  integrity sha512-8Y406zevUPbbIBA/HRk33khEmQPk5+cxeflWE/2rx1NJsjVWMPw/9mSP9rxHP5eqi6LNoPBVMfZHxbwLSgldYA==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 chokidar@^3.0.0, chokidar@^3.5.1, chokidar@^3.5.2, chokidar@^3.5.3, "chokidar@>=3.0.0 <4.0.0":
   version "3.6.0"
@@ -5364,6 +5383,11 @@ modern-normalize@^1.1.0:
   resolved "https://registry.npmjs.org/modern-normalize/-/modern-normalize-1.1.0.tgz"
   integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==
 
+moment@^2.10.2:
+  version "2.30.1"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.30.1.tgz"
+  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
+
 mrmime@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/mrmime/-/mrmime-2.0.0.tgz"
@@ -6367,7 +6391,7 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-"rxjs@^6.5.3 || ^7.4.0", "rxjs@^6.5.5 || ^7.4.0", rxjs@^7.6.0, rxjs@^7.8.1, rxjs@~7.8.0, rxjs@7.8.1:
+"rxjs@^6.5.3 || ^7.4.0", "rxjs@^6.5.5 || ^7.4.0", rxjs@^7.4.0, rxjs@^7.8.1, rxjs@~7.8.0, rxjs@7.8.1:
   version "7.8.1"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz"
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==

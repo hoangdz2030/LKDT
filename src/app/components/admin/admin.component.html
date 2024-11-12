@@ -56,6 +56,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('supplier')" routerLink="/admin/supplier"
+              routerLinkActive="active">
+              <i class="fa-solid fa-clipboard-list icon"></i>Nhà cung cấp
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" (click)="showAdminComponent('baiviet')" routerLink="/admin/baiviet"
               routerLinkActive="active">
               <i class="fa-solid fa-clipboard-list icon"></i>Bài viết
@@ -74,17 +80,21 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="showAdminComponent('baiviet')" routerLink="/admin/baiviet"
+            <a class="nav-link" (click)="showAdminComponent('baiviet')" routerLink="/admin/dieukienkhuyenmai"
               routerLinkActive="active">
               <i class="fa-solid fa-file-contract icon"></i>Điều kiện khuyến mãi
             </a>
           </li>
-
-
+          <li class="nav-item">
+            <a class="nav-link" (click)="showAdminComponent('report')" routerLink="/admin/report"
+              routerLinkActive="active">
+              <i class="fa-solid fa-file-contract icon"></i>Report từ khách hàng
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
-    <div class="col-md-10 col-lg-10 overflow-auto">
+    <div class="col-md-10 col-lg-10 overflow-auto" style="background-color: aliceblue;">
       <router-outlet></router-outlet>
     </div>
   </div>
