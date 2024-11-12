@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FavoriteService } from '../../services/favorite.service'; // Đường dẫn đúng đến FavoriteService
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-list-product',
@@ -28,6 +29,7 @@ import { FavoriteService } from '../../services/favorite.service'; // Đường 
 })
 export class ListProductComponent implements OnInit {
   @Input() categoryId: any;
+  isPressedAddToCart: boolean = false;
   products: Product[] = [];
   activeNavItem: number = 0;
   categories: Category[] = [];
@@ -49,6 +51,7 @@ export class ListProductComponent implements OnInit {
     private categoryService: CategoryService,
     private router: Router,
     private tokenService: TokenService,
+    private cartService: CartService,
     private favoriteService: FavoriteService, // Thêm FavoriteService vào constructor
     @Inject(DOCUMENT) private document: Document
   ) {
@@ -70,6 +73,11 @@ export class ListProductComponent implements OnInit {
         console.error(error?.error?.message ?? '');
       }
     });
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product.id, 1); // Giả sử số lượng là 1, bạn có thể chỉnh sửa tùy ý
+    alert("The product has been added to the cart");
   }
 
   getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number) {
