@@ -14,6 +14,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { RouterModule } from '@angular/router';
 import { FavoriteService } from '../../services/favorite.service'; // Đường dẫn đúng đến FavoriteService
 import { CartService } from '../../services/cart.service';
+import { UserResponse } from '../../responses/user/user.response';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-list-product',
@@ -42,6 +44,7 @@ export class ListProductComponent implements OnInit {
   keyword: string = "";
   localStorage?: Storage;
   apiBaseUrl = environment.apiBaseUrl;
+  userResponse?:UserResponse | null;
 
   // Biến `isFavorited` để lưu trạng thái yêu thích của mỗi sản phẩm
   isFavorited: { [key: number]: boolean } = {};
@@ -53,6 +56,7 @@ export class ListProductComponent implements OnInit {
     private tokenService: TokenService,
     private cartService: CartService,
     private favoriteService: FavoriteService, // Thêm FavoriteService vào constructor
+    private userService: UserService,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.localStorage = document.defaultView?.localStorage;
@@ -60,8 +64,10 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit() {
     this.currentPage = 0;
+    this.userResponse = this.userService.getUserResponseFromLocalStorage();
     this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
     this.getCategories(0, 100);
+    console.log(this.userResponse)
   }
 
   getCategories(page: number, limit: number) {
@@ -76,17 +82,19 @@ export class ListProductComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product.id, 1); // Giả sử số lượng là 1, bạn có thể chỉnh sửa tùy ý
+    this.cartService.addToCart(product.id, 1);
     alert("The product has been added to the cart");
   }
 
   getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number) {
+    const userId = this.userResponse?.id;
+    console.log("================"+ userId);
     this.productService.getProducts(keyword, selectedCategoryId, page, limit).subscribe({
       next: (apiresponse: ApiResponse) => {
         const response = apiresponse.data;
         response.products.forEach((product: Product) => {
           product.url = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
-          this.checkFavoriteStatus(product.id); // Kiểm tra trạng thái yêu thích của mỗi sản phẩm
+          // this.checkFavoriteStatus(product.id); // Kiểm tra trạng thái yêu thích của mỗi sản phẩm
         });
         this.products = response.products;
         this.totalPages = response.totalPages;
@@ -100,10 +108,12 @@ export class ListProductComponent implements OnInit {
 
   // Kiểm tra trạng thái yêu thích của sản phẩm
   checkFavoriteStatus(productId: number) {
-    const userId = this.tokenService.getUserId();
+    const userId = this.userResponse?.id;
+    console.log("================"+ userId);
     if (userId) {
       this.favoriteService.checkFavorite(userId, productId).subscribe({
         next: (response) => {
+          console.log("response.favorited============="+ response.favorited);
           this.isFavorited[productId] = response.favorited;
         },
         error: (error: any) => { // hoặc HttpErrorResponse nếu muốn chi tiết hơn
@@ -118,6 +128,7 @@ export class ListProductComponent implements OnInit {
 
   // Toggle trạng thái yêu thích cho sản phẩm
   toggleFavorite(productId: number) {
+    console.log("===============================")
     this.favoriteService.toggleFavorite(this.tokenService.getUserId(), productId).subscribe({
       next: () => {
         this.isFavorited[productId] = !this.isFavorited[productId];

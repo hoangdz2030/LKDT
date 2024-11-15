@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
       this.currentPage = Number(this.localStorage?.getItem('currentProductPage')) || 0;
       this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
       this.getCategories(0, 100);
-
+      console.log("104"+this.userResponse?.fullname);
       this.route.queryParams.subscribe(params => {
         this.idEmail = params['id'];
         this.typeRequest = params['type'];
