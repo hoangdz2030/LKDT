@@ -94,9 +94,8 @@
               <div class="popover-list">
                 <a class="popover-item" (click)="handleItemClick(0)">My account</a>
                 <a class="popover-item" (click)="handleItemClick(1)">Order</a>
-                <a class="popover-item" (click)="handleItemClick(3)">Sản phẩm xem gần đây</a>
-                <a class="popover-item" (click)="handleItemClick(2)">Log out</a>
-
+                <a class="popover-item" (click)="handleItemClick(3)">Sản phẩm Yêu Thích</a>
+                <a class="popover-item" (click)="handleItemClick(2)">Log out</a>  
               </div>
             </ng-template>
           </ng-container>
@@ -110,19 +109,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <div class="row">
     <style>
@@ -309,7 +295,13 @@
         </div>
         <h2 class="font-bold text-xl">Mô tả</h2>
         <p style="text-align: justify;"> {{product?.description}} </p>
-
+        <div class="product-quantity">
+          <div class="quantity-wrapper">
+            <button class="quantity-btn" (click)="decreaseQuantity()">-</button>
+            <input type="text" class="quantity-input" [value]="quantity">
+            <button class="quantity-btn" (click)="increaseQuantity()">+</button>
+          </div>
+        </div>        
         <div class="product-actions">
           <button class="btn btn-primary"
             style="font-weight: 600;font-size: 18px; background-color: #BE1529; border-color: #BE1529; width: 50%;"
@@ -318,13 +310,7 @@
             style="font-weight: 600;font-size: 18px; background-color: #428bca; border-color: #428bca; width: 50%;"
             (click)="buyNow()">Mua ngay</button>
         </div>
-        <div class="product-quantity">
-          <div class="border-wrapper" style="border: 1px solid; padding: 3px;">
-            <button (click)="decreaseQuantity()">-</button>
-            <input type="text" [value]="quantity">
-            <button (click)="increaseQuantity()">+</button>
-          </div>
-        </div>
+        
         <div class="product-desc-short prtab2">
           <p style="margin-top: 0;
     margin-bottom: 1rem">
@@ -515,8 +501,6 @@
 
     </section>
   </div>
-
-
   <app-list-product [categoryId]="product?.category_id"></app-list-product>
-</div>
+  </div>
 <!-- <app-footer></app-footer> -->

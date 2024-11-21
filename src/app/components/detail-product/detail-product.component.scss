@@ -599,3 +599,45 @@ hr {
   margin-top: 5px;
   margin-bottom: 5px;
   }
+  .product-quantity .quantity-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: fit-content;
+  }
+  
+  .product-quantity .quantity-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #f5f5f5;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #231e1e;
+    transition: background-color 0.2s ease;
+  }
+  
+  .product-quantity .quantity-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .product-quantity .quantity-input {
+    width: 40px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .product-quantity .quantity-input:focus {
+    border: none;
+  }
+  

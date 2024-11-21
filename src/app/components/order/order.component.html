@@ -89,17 +89,19 @@
                   </div>
                 </td>
                 <td>
-                  <div class="product-quantity" style="height: 10px;">
+                  <div class="product-quantity" style="height: 10px; margin-top: -10px;">
                     <b>
-                      <div class="border-wrapper">
-                        <button (click)="decreaseQuantity(i)" style="font-size: large; margin-right: 10px;">-</button>
-                        <span style="font-size: large;">{{ item.quantity }}</span>
-                        <button (click)="increaseQuantity(i)" style="font-size:large;margin-left: 10px;">+</button>
-                      </div>
+                      <div class="product-quantity">
+                        <div class="border-wrapper">
+                          <button class="quantity-btn" (click)="decreaseQuantity(i)">-</button>
+                          <span class="quantity-value">{{ item.quantity }}</span>
+                          <button class="quantity-btn" (click)="increaseQuantity(i)">+</button>
+                        </div>
+                      </div>                      
                     </b>
                   </div>
                 </td>
-                <td style="color: #e30019;"><b>{{ item.product.price | number:'1.0-0' }}</b></td>
+                <!-- <td style="color: #e30019;"><b>{{ item.product.price | number:'1.0-0' }}</b></td> -->
                 <td style="color: #e30019;"><b>{{ (item.product.price * item.quantity) | number:'1.0-0' }}</b></td>
                 <td>
                   <button class="btn btn-danger" (click)="confirmDelete(i)">
@@ -122,7 +124,7 @@
           </div>
           @if(couponDiscount > 0) {
           <div class="text-start mt-3">
-            <h6 style="margin-left: 20px; margin-top: 10px; margin-bottom: 30px; font-weight: bolder; font-size: larger;" class="header-text text-end ">Được giảm: {{ couponDiscount | number:'1.0-0'}} đ</h6>
+            <!-- <h6 style="margin-left: 20px; margin-top: 10px; margin-bottom: 30px; font-weight: bolder; font-size: larger;" class="header-text text-end ">{{ couponDiscount | number:'1.0-0'}} đ</h6> -->
           </div>
           }
 
