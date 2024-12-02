@@ -1,25 +1,27 @@
-<h1>kho lưu trữ</h1>
+<h1 style="text-align: center;">kho lưu trữ</h1>
 <hr>
 <br>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; flex-direction: row;">
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <div class="form-inline">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div style="margin-left: 500px;" class="form-inline">
       <div class="form-group">
-          <input type="text" class="form-control" placeholder="Tìm kiếm . . . . ." #searchName>
+          <input type="text" class="form-control" style="width: 500px;" placeholder="Tìm kiếm . . . . ." #searchName>
       </div>
       <button type="submit" class="btn btn-primary" style="background: #5b5d8f;"><i class="fa fa-search"></i></button>
     </div>
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <a class="btn btn-sm btn-success" style="padding: 5px; font-size: 15px; background:#5b5d8f; color:white; position: absolute; right: 0;" data-toggle="modal" data-target="#addCategoryModal">
-      THÊM kho lưu trữ
-    </a>
-  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <a class="btn btn-sm btn-success" style="padding: 5px; font-size: 15px; background:#5b5d8f; color:white; position: absolute; right: 0;" data-toggle="modal" data-target="#addCategoryModal">
+    THÊM kho lưu trữ
+  </a>
 </div>
 <br>
-<div>
-  <table class="table">
+<br>
+<div class="shadow-lg rounded-3xl bg-white p-8">
+  <table class="table table-bordered table-striped">
     <thead class="table-dark">
       <tr>
         <th>ID</th>
@@ -50,18 +52,14 @@
     </tbody>
   </table>
 </div>
-
-<nav aria-label="Page navigation">
-  <ul class="pagination">
+<nav aria-label="Page navigation" class="mt-4">
+  <ul class="pagination justify-content-center">
     <li class="page-item" [class.disabled]="currentPage === 1">
       <a class="page-link" (click)="changePage(currentPage - 1)"> &laquo; </a>
     </li>
-
-    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
-        [class.active]="i + 1 === currentPage">
+    <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="i + 1 === currentPage">
       <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
     </li>
-
     <li class="page-item" [class.disabled]="currentPage === totalPages">
       <a class="page-link" (click)="changePage(currentPage + 1)"> &raquo; </a>
     </li>

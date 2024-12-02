@@ -1,39 +1,153 @@
-.user-management {
-  background-color: #5b5d8f; /* Màu nền của khung */
-  padding: 20px;
-  border-radius: 30px;
+/* General Styles */
+body {
+  background-color: #f9f9f9; /* Tone nền nhã nhặn */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.user-table {
-  color: white; /* Màu chữ cho bảng */
-  text-align: center; /* Căn giữa chữ trong bảng */
+/* Search Input */
+.search-input {
+  background-color: #ffffff;
+  color: #333333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.table-header {
-  background-color: #3a3b5a; /* Màu nền của tiêu đề bảng */
+.search-input:focus {
+  border-color: #5b5d8f;
+  box-shadow: 0 0 5px rgba(91, 93, 143, 0.4);
+  outline: none;
 }
 
-.user-table th {
-  padding: 12px; /* Khoảng cách cho tiêu đề bảng */
+/* Search Button */
+.search-button {
+  text-transform: uppercase;
+  background-color: #5b5d8f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease;
 }
 
-.user-table td {
-  padding: 12px; /* Khoảng cách cho ô dữ liệu */
+.search-button:hover {
+  background-color: #1F2937;
 }
 
-.bg-dark-purple {
-  background-color: #5b5d8f; /* Màu nền khung */
+/* Table Styles */
+.table {
+  width: 100%;
+  margin: 20px 0px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
 }
 
-.bg-blue-500 {
-  background-color: #3b82f6; /* Màu nền cho nút Reset Password */
+.table th {
+  background-color: #5b5d8f;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.bg-red-600 {
-  background-color: #ef4444; /* Màu nền cho nút Block User */
+.table td {
+  background-color: #f9f9f9;
+  color: #333333;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.bg-blue-500:hover,
-.bg-red-600:hover {
-  transition: background-color 0.3s; /* Hiệu ứng khi hover */
+.table tr:nth-child(even) {
+  background-color: #e7e7f2;
+}
+
+.table tr:hover {
+  background-color: #d5d5eb;
+}
+
+/* Headings */
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0px;
+  color: #5b5d8f;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0px;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 5px 0px;
+  color: crimson;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.btn {
+  text-transform: uppercase;
+  background-color: #5b5d8f;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1F2937;
+}
+
+/* Pagination */
+.page-link {
+  background-color: #5b5d8f;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.page-link:hover,
+.page-link.active {
+  background-color: #1F2937;
+  color: #ffffff;
+}
+
+/* Labels */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin: 10px 0px;
+  display: block;
+}
+
+/* Icons */
+i {
+  font-size: 16px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+i:hover {
+  color: #f1f1f1;
 }

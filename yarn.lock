@@ -2742,7 +2742,12 @@ acorn@^7.0.0:
   resolved "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
-acorn@^8, acorn@^8.7.1, acorn@^8.8.2:
+acorn@^8, acorn@^8.7.1:
+  version "8.11.3"
+  resolved "https://registry.npmjs.org/acorn/-/acorn-8.11.3.tgz"
+  integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
+
+acorn@^8.8.2:
   version "8.11.3"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.11.3.tgz"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
@@ -6009,7 +6014,7 @@ postcss@^7, "postcss@^7.0.0 || ^8.0.1", postcss@^7.0.18, postcss@^7.0.32, postcs
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.1.0, postcss@8.4.35:
+postcss@^8.1.0, postcss@^8.4.35, postcss@8.4.35:
   version "8.4.35"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.35.tgz"
   integrity sha512-u5U8qYpBCpN13BsiEB0CbR1Hhh4Gc0zLFuedrHJKMctHCHAGrMdG0PRM/KErzAL3CU6/eckEtmHNB3x6e3c0vA==
@@ -6046,15 +6051,6 @@ postcss@^8.4.23:
     source-map-js "^1.2.0"
 
 postcss@^8.4.33:
-  version "8.4.38"
-  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.38.tgz"
-  integrity sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==
-  dependencies:
-    nanoid "^3.3.7"
-    picocolors "^1.0.0"
-    source-map-js "^1.2.0"
-
-postcss@^8.4.35:
   version "8.4.38"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.38.tgz"
   integrity sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==
@@ -6613,6 +6609,43 @@ shell-quote@^1.8.1:
   version "1.8.1"
   resolved "https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.1.tgz"
   integrity sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==
+
+"shopapp-angular@file:":
+  version "0.0.0"
+  resolved "file:"
+  dependencies:
+    "@angular/animations" "^17.0.0"
+    "@angular/common" "^17.0.0"
+    "@angular/compiler" "^17.0.0"
+    "@angular/core" "^17.0.0"
+    "@angular/forms" "^17.0.0"
+    "@angular/material" "^16.2.14"
+    "@angular/platform-browser" "^17.0.0"
+    "@angular/platform-browser-dynamic" "^17.0.0"
+    "@angular/platform-server" "^17.0.0"
+    "@angular/router" "^17.0.0"
+    "@angular/ssr" "^17.0.6"
+    "@auth0/angular-jwt" "^5.2.0"
+    "@fortawesome/fontawesome-free" "^6.5.1"
+    "@ng-bootstrap/ng-bootstrap" "^16.0.0"
+    "@ngx-pwa/local-storage" "^17.0.0"
+    "@ngx-translate/core" "^15.0.0"
+    "@ngx-translate/http-loader" "^8.0.0"
+    "@popperjs/core" "^2.11.8"
+    autoprefixer "^9.8.8"
+    bootstrap "^5.3.2"
+    chart.js "^4.4.6"
+    class-transformer "^0.5.1"
+    class-validator "^0.14.0"
+    express "^4.18.2"
+    font-awesome "^4.7.0"
+    ngx-pagination "^6.0.3"
+    postcss "^7.0.39"
+    rxjs "~7.8.0"
+    shopapp-angular "file:"
+    swiper "^11.1.1"
+    tslib "^2.3.0"
+    zone.js "~0.14.2"
 
 side-channel@^1.0.4:
   version "1.0.6"
