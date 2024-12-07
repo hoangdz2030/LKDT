@@ -44,6 +44,7 @@ export class OrderAdminComponent implements OnInit{
   ) {
     this.localStorage = document.defaultView?.localStorage;
   }
+  
   ngOnInit(): void {
     debugger
     this.currentPage = Number(this.localStorage?.getItem('currentOrderAdminPage')) || 0; 
@@ -80,7 +81,23 @@ export class OrderAdminComponent implements OnInit{
     this.localStorage?.setItem('currentOrderAdminPage', String(this.currentPage));         
     this.getAllOrders(this.keyword, this.currentPage, this.itemsPerPage);
   }
-
+  generateVisiblePages() {
+    const maxVisiblePages = 5; 
+    const halfVisiblePages = Math.floor(maxVisiblePages / 2);
+  
+    let startPage = Math.max(this.currentPage - halfVisiblePages, 1);
+    let endPage = Math.min(startPage + maxVisiblePages - 1, this.totalPages);
+  
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+    }
+  
+    this.visiblePages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+  
+    console.log('Visible Pages:', this.visiblePages); // Kiểm tra giá trị visiblePages
+  }
+  
+  
   // generateVisiblePageArray(currentPage: number, totalPages: number): number[] {
   //   const maxVisiblePages = 5;
   //   const halfVisiblePages = Math.floor(maxVisiblePages / 2);
