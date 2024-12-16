@@ -65,6 +65,7 @@ export class ProductAdminComponent implements OnInit {
         next: (apiresponse: ApiResponse) => {
           debugger;
           const response = apiresponse.data;
+
           response.products.forEach((product: Product) => {          
             product.url = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
           });

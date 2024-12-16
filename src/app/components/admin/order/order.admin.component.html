@@ -66,29 +66,33 @@
       </tbody>
     </table>
 
-    <div class="flex justify-center mt-8">
-      <nav aria-label="Page navigation">
-        <ul class="pagination flex space-x-2">
-          @if (currentPage > 1) {
-          <li>
-            <button class="page-link" (click)="onPageChange(1)">Đầu</button>
+    <div class="d-flex justify-content-center">
+      <nav aria-label="Page navigation" style="margin: 10px;">
+        <ul class="pagination">
+          @if(currentPage > 0) {
+          <li class="page-item">
+            <a class="page-link" (click)="onPageChange(0)">First</a>
           </li>
-          <li>
-            <button class="page-link" (click)="onPageChange(currentPage - 1)">Trước</button>
-          </li>
-          }
-          @for (page of visiblePages; track page) {
-          <li>
-            <button class="page-link" [ngClass]="{ 'active': page === currentPage }" (click)="onPageChange(page)">
-              {{ page }}
-            </button>
+          <li class="page-item">
+            <a class="page-link" (click)="onPageChange(currentPage - 1)">
+              <i class="fa fa-chevron-left"></i>
+            </a>
           </li>
           }
-          @if (currentPage < totalPages) { <li>
-            <button class="page-link" (click)="onPageChange(currentPage + 1)">Tiếp</button>
+          @for(page of visiblePages; track page) {
+          <ng-container>
+            <li class="page-item" [ngClass]="{'active': page === currentPage + 1}">
+              <a class="page-link" (click)="onPageChange(page - 1)">{{ page }}</a>
             </li>
-            <li>
-              <button class="page-link" (click)="onPageChange(totalPages)">Cuối</button>
+          </ng-container>
+          }
+          @if(currentPage < totalPages - 1) { <li class="page-item">
+            <a class="page-link" (click)="onPageChange(currentPage + 1)">
+              <i class="fa fa-chevron-right"></i>
+            </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" (click)="onPageChange(totalPages - 1)">Last</a>
             </li>
             }
         </ul>

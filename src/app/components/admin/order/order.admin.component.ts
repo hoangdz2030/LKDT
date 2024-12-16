@@ -28,7 +28,7 @@ export class OrderAdminComponent implements OnInit{
   orders: OrderResponse[] = [];
   // orders: Order[] = [];
   currentPage: number = 0;
-  itemsPerPage: number = 40;
+  itemsPerPage: number = 5;
   pages: number[] = [];
   totalPages:number = 0;
   keyword:string = "";
@@ -44,7 +44,6 @@ export class OrderAdminComponent implements OnInit{
   ) {
     this.localStorage = document.defaultView?.localStorage;
   }
-  
   ngOnInit(): void {
     debugger
     this.currentPage = Number(this.localStorage?.getItem('currentOrderAdminPage')) || 0; 
@@ -61,9 +60,11 @@ export class OrderAdminComponent implements OnInit{
     debugger
     this.orderService.getAllOrders(keyword, page, limit).subscribe({
       next: (apiResponse: ApiResponse) => {
-        debugger        
+        console.log( " order.data:",apiResponse.data)
+      
         this.orders = apiResponse.data;
-        this.totalPages = apiResponse.data.totalPages;
+        this.totalPages = apiResponse.data.length;
+        this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);
       },
       complete: () => {
         debugger;
@@ -75,29 +76,27 @@ export class OrderAdminComponent implements OnInit{
     });    
     
   }
+  generateVisiblePageArray(currentPage: number, totalPages: number): number[] {
+    const maxVisiblePages = 5;
+    const halfVisiblePages = Math.floor(maxVisiblePages / 2);
+  
+    let startPage = Math.max(currentPage - halfVisiblePages, 1);
+    let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+  
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+    }
+  
+    return new Array(endPage - startPage + 1).fill(0)
+      .map((_, index) => startPage + index);
+  }
   onPageChange(page: number) {
     debugger;
     this.currentPage = page < 0 ? 0 : page;
     this.localStorage?.setItem('currentOrderAdminPage', String(this.currentPage));         
     this.getAllOrders(this.keyword, this.currentPage, this.itemsPerPage);
   }
-  generateVisiblePages() {
-    const maxVisiblePages = 5; 
-    const halfVisiblePages = Math.floor(maxVisiblePages / 2);
-  
-    let startPage = Math.max(this.currentPage - halfVisiblePages, 1);
-    let endPage = Math.min(startPage + maxVisiblePages - 1, this.totalPages);
-  
-    if (endPage - startPage + 1 < maxVisiblePages) {
-      startPage = Math.max(endPage - maxVisiblePages + 1, 1);
-    }
-  
-    this.visiblePages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
-  
-    console.log('Visible Pages:', this.visiblePages); // Kiểm tra giá trị visiblePages
-  }
-  
-  
+
   // generateVisiblePageArray(currentPage: number, totalPages: number): number[] {
   //   const maxVisiblePages = 5;
   //   const halfVisiblePages = Math.floor(maxVisiblePages / 2);

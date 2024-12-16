@@ -34,7 +34,7 @@ export class CategoryAdminComponent implements OnInit {
     getCategories(page: number, limit: number) {
       this.categoryService.getCategories(page, limit).subscribe({
         next: (apiResponse: ApiResponse) => {
-          debugger;
+       console.log( " catogory.data:",apiResponse.data)
           this.categories = apiResponse.data;
         },
         complete: () => {
