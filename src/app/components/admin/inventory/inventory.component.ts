@@ -6,7 +6,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 import { InventoryService } from '../../../services/inventory.service';
 import { ApiResponse } from '../../../responses/api.response';
-import {  FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Warehouse } from '../../../models/warehouse';
 import { Product } from '../../../models/product';
 import { cpSync } from 'fs';
@@ -25,7 +25,7 @@ export class InventoryComponent implements OnInit {
   selectedInventory: any = null;
   inventory: any = {};  // Sản phẩm được chọn để sửa
   inventories: Inventory[] = [];  // Array to hold the warehouse products
-  totalinventorys: number = 50;  // Total number of products (this could come from API)
+  totalinventorys: number = 10;  // Total number of products (this could come from API)
   inventorysPerPage: number = 5;  // Number of products per page
   currentPage: number = 1;  // Current page
   pageSize: number = 6;  // The maximum number of pages
