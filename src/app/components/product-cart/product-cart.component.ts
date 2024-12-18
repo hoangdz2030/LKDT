@@ -31,11 +31,16 @@ export class ProductCartComponent {
        private snackBar: MatSnackBar
 
     ){}
-  navigateTo(path:string) {
-    console.log(path);
-
-    this.router.navigate([path]);
-  }
+    navigateTo(path: string) {
+      console.log(path);
+    
+      // Navigate to the desired path
+      this.router.navigate([path]).then(() => {
+        // Reload the page after navigation is successful
+        window.location.reload();
+      });
+    }
+    
   ngOnInit(): void {
     this.userResponse = this.userService.getUserResponseFromLocalStorage();
 

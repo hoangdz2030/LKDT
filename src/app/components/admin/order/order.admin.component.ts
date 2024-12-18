@@ -61,7 +61,7 @@ export class OrderAdminComponent implements OnInit{
     this.orderService.getAllOrders(keyword, page, limit).subscribe({
       next: (apiResponse: ApiResponse) => {
         console.log( " order.data:",apiResponse.data)
-      
+  
         this.orders = apiResponse.data;
         this.totalPages = apiResponse.data.length;
         this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);
