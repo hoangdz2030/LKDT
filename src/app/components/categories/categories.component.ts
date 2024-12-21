@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { Category } from '../../models/category';
 import { Product } from '../../models/product';
@@ -32,7 +32,8 @@ import { TokenService } from '../../services/token.service';
     NgbModule,
     ProductCartComponent,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+     RouterModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
 
